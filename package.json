@@ -1,0 +1,22 @@
+{
+  "name": "fast-dashboard",
+  "version": "1.0.0",
+  "description": "send console data to server from socker",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kroy665/fast-dashboard.git"
+  },
+  "author": "Koushik Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kroy665/fast-dashboard/issues"
+  },
+  "homepage": "https://github.com/Kroy665/fast-dashboard#readme",
+  "dependencies": {
+    "socket.io-client": "^4.5.1"
+  }
+}
