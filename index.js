@@ -1,6 +1,6 @@
 const { io } = require("socket.io-client");
 
-const socket = io("http://localhost:3000");
+const socket = io("https://89e1-103-215-225-194.in.ngrok.io");
 
 function dashboard(params) {
     socket.on("connect", () => {
