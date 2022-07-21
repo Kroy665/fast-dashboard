@@ -1,8 +1,8 @@
 const io = require("socket.io-client");
 
 // const baseUrl = 'http://localhost:8080';
-// const baseUrl = 'https://fastcode.live';
-const baseUrl = 'https://e994-103-215-225-194.in.ngrok.io';
+const baseUrl = 'https://fastcode.live';
+// const baseUrl = 'https://e994-103-215-225-194.in.ngrok.io';
 
 // const socket = io("https://89e1-103-215-225-194.in.ngrok.io");
 // const socket = io(baseUrl + "/project");
@@ -38,7 +38,10 @@ const socket = io.connect(baseUrl + "/project", {
 });
 socket.on("connect", async () => {
     console.log("socket connected");
-    var token = await userDevicesData();
+    var token;
+    if(process.env['FASTCODE_TOKEN']){
+        token = await userDevicesData();
+    }
 
     socket
         .on("authenticated", () => {
@@ -59,7 +62,7 @@ socket.on("connect", async () => {
             }
         })
         .emit("authenticate", {
-            token: token,
+            token: process.env["FASTCODE_DEVICE_TOKEN"]
         });
 });
 
